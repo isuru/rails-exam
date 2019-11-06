@@ -76,21 +76,24 @@ update challenge/config/database.yml
 
 
 ##### Create a Visual Representation of Different Charges
-On the view that shows all charges (most likely the *GET /charges* route), create three lists with H1 headers. 
+On the controller that shows all charges (most likely the *GET /charges* route), return a json list as follows. 
 
-- List 1 - 
-  - Header: Failed Charges
-  - In this list set the background color of the rows to #FF0000 and list the Customers name, the charge amount and the date that the charge failed for each failed charge. 
+"data": {
+  "paid": [
+    {
+      "id": 111,
+      "customer_id": 111
+    }
+  ],
+  "refunded": [
+    {
+      "id": 111,
+      "customer_id": 111
+    }
+  ]
+}
 
-- List 2 - 
-  - Header: Disputed Charges
-  - In this list set the background color of the rows to ##FF5400 and list hte Customers name, the charge amount and the date that the charge was disputed for each disputed charge. 
-
-- List 3 - 
-  - Header: Successful Charges
-  - In this list simply display all the charges that were succesfull. 
-
-### Tests
+### Tests - OPTIONAL
 
 Create the following RSpec tests:
 
