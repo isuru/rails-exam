@@ -1,7 +1,3 @@
-HOW to deploy.
-
-run bundle install
-
 # Rails Programming Task
 
 ### In order to be considered for a rails position, you must complete the following steps.
@@ -15,7 +11,7 @@ run bundle install
 
 ## Task
 
-- Fork this repository (if you don't know how to do that, Google is your friend)
+- Fork this repository
 - Create directory challenge
 - In the *challenge* directory, scaffold a simple Rails 4 web app that models a credit card charge. JSON data structure below: 
 
@@ -55,7 +51,7 @@ run bundle install
       Last Name: Smith
 
   
-##### Seed 20 charges (charges) into the system
+##### Seed 15 charges (charges) into the system
 
     10 Should be paid charges:
       - 5 Should be linked to Customer 1
