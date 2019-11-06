@@ -1,14 +1,11 @@
 HOW to deploy.
 
 run bundle install
-dump the file challenge.sql in phpmyadmin
-update challenge/config/database.yml
 
 # Rails Programming Task
 
 ### In order to be considered for a rails position, you must complete the following steps.
 *Note: This task should take no longer than 1-2 hours at the most to complete.*
-
 
 ### Prerequisites
 
@@ -19,8 +16,8 @@ update challenge/config/database.yml
 ## Task
 
 - Fork this repository (if you don't know how to do that, Google is your friend)
-- Create a *source* directory.
-- In the *source* directory, scaffold a simple Rails 4 web app that models a credit card charge. JSON data structure below: 
+- Create directory challenge
+- In the *challenge* directory, scaffold a simple Rails 4 web app that models a credit card charge. JSON data structure below: 
 
 ```
   {
@@ -58,37 +55,34 @@ update challenge/config/database.yml
       Last Name: Smith
 
   
-##### Seed 20 transactions (charges) into the system
+##### Seed 20 charges (charges) into the system
 
-    10 Should be successful transactions:
+    10 Should be paid charges:
       - 5 Should be linked to Customer 1
       - 3 Should be linked to Customer 2
       - 1 Should be linked to Customer 3
       - 1 Should be linked to Customer 4
     
-    5 Should be transactions that failed:
+    5 Should be charges that refunded:
       - 3 Should be linked to Customer 3
       - 2 Should be linked to Customer 4
-    
-    5 should be disputed:
-      - 3 should be linked to Customer 1
-      - 2 should be linked to customer 2
 
 
-##### Create a Visual Representation of Different Charges
+
+##### Create a json of Different charges
 On the controller that shows all charges (most likely the *GET /charges* route), return a json list as follows. 
 
 "data": {
   "paid": [
     {
       "id": 111,
-      "customer_id": 111
+      "customer_name": 'customer 1'
     }
   ],
   "refunded": [
     {
       "id": 111,
-      "customer_id": 111
+      "customer_name": 'customer 2'
     }
   ]
 }
@@ -97,8 +91,7 @@ On the controller that shows all charges (most likely the *GET /charges* route),
 
 Create the following RSpec tests:
 
-  1.  Verify that there are three lists on the screen. One for Successful charges, one for failed charges and one for the disputed charges. 
-  2.  Verify that in the Successful charges list there are 10 line items. Verify that in the failed charges list there are 5 failed charges. Verify that in the disputed charges list there are failed charges. 
+  1.  Verify that in the Paid charges list there are 10 line items. Verify that in the refunded charges list there are 5 failed charges.
 
 ## Once Complete
 1. Commit and Push your code to your new repository
