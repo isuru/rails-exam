@@ -4,6 +4,8 @@ class Charge < ActiveRecord::Base
   validates :customer_id, presence: true
   after_create :record_created
 
+  scope :paid, -> { where(paid: true) }
+  scope :refunded, -> { where(refunded: true) }
 
   private
 

@@ -4,6 +4,10 @@ class TransactionsController < ApplicationController
   end
 
   def charges
-    render plain: "Charges"
+    charges = Charge.includes(:customer)
+    @paid_charges = charges.paid
+    @refunded_charges = charges.refunded
+
+    render formats: :json
   end
 end
